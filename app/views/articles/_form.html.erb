@@ -7,19 +7,40 @@
     </ul>
 <% end %>
 
+<div class = "row">
+    <div class = "col-md-8">
 
-<%= form_for @article do |f| %>
-<p>
-    <%= f.label :title %> <br/>
-    <%= f.text_field :title %>
- </p>
-<p>
-    <%= f.label :description %> <br/>
-    <%= f.text_area :description %>
- </p>
- <p>
-    <%= f.submit %> <br/>
- </p>
-<% end %>
+        <%= form_for (@article), :html => {class: "form", role:"form"} do |f| %>
+            <div class= "form-group">
+                <div align = "center">   
+                <strong>
+                    <%= f.label :title%> :
+                </strong>
+                </div>
+                
+                <div class ="col-xs-10">
+                    <%= f.text_field :title, class: "form-control", placeholder: "Title here!", autofocus: true %>
 
-<%= link_to "Back to articles", articles_path %>
+                </div>
+                <br>
+             <div class= "form-group">
+                <div align = "center">   
+                <strong><%= f.label :description %>  :</strong>
+                </div>
+                <div class ="col-xs-10">
+                    <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Description here!", autofocus: true %>
+
+                </div>    
+            <br>
+                <div class= "form-group">           
+                    <%= f.submit class: 'col-sm-5 btn btn-primary btn-lg' %> 
+                </div>
+            
+            </div>
+        <% end %>
+
+        <div class = "col-cs-4">
+           [ <%= link_to "Cancel Request and return to article listing", articles_path %> ]
+        </div>
+    </div>
+</div>

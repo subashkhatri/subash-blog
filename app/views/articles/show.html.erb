@@ -1,22 +1,24 @@
-<h1> Showing selected article</h1>
+<h1 align = "center" > Showing selected article</h1>
 
-<p>
+<p align = "center">
     Title: <%= @article.title %>
 
 </p>
-<p>
+<p align = "center">
     Description: <%= @article.description %>
 
 </p>
 
-<p>
+<p align = "center">
     Created At: <%= @article.created_at %>
 
 </p>
 
-<p>
+<p align = "center">
     Updated At: <%= @article.updated_at %>
 
 </p>
 
-<%= link_to "Back to articles", articles_path %>
+<div align = "center">
+    <%= link_to "Back to articles", articles_path %>
+</div>
