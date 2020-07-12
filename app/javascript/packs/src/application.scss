@@ -1,0 +1,19 @@
+
+ 
+ @import "~bootstrap/scss/bootstrap";
+
+ #logo {
+     float: left;
+     font-size: 1.7em;
+     color: #fff;
+     text-transform: uppercase;
+     letter-spacing: -1px;
+     font-weight: bold;
+ }
+ #logo:hover {
+     color: rgb(81, 14, 236);
+     text-decoration: none;
+ }
+ .center {
+     text-align: center;
+ }
