@@ -1,22 +1,13 @@
-<% if @article.errors.any? %>
-<h2> The Following errors prevented the article to be added ! </h2>
-    <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-            <li> <%= msg %></li>
-        <% end %>
-    </ul>
-<% end %>
-
+<%= render 'shared/errors', obj: @article %>
 <div class = "row">
-    <div class = "col-md-8">
+    <div class = "col-md-8" style="margin-left: 15%;" >
 
         <%= form_for (@article), :html => {class: "form", role:"form"} do |f| %>
-            <div class= "form-group">
-                <div align = "center">   
+           <div class= "form-group"> 
                 <strong>
-                    <%= f.label :title%> :
+                    <%= f.label :title%> 
                 </strong>
-                </div>
+            </div>
                 
                 <div class ="col-xs-10">
                     <%= f.text_field :title, class: "form-control", placeholder: "Title here!", autofocus: true %>
@@ -24,8 +15,8 @@
                 </div>
                 <br>
              <div class= "form-group">
-                <div align = "center">   
-                <strong><%= f.label :description %>  :</strong>
+                <div >   
+                <strong><%= f.label :description %> </strong>
                 </div>
                 <div class ="col-xs-10">
                     <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Description here!", autofocus: true %>
