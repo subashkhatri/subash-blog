@@ -9,7 +9,8 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
-#use bootstrap
+#use byceypt
+gem 'bcrypt', '~> 3.1.7'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
