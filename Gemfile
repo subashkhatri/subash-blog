@@ -10,7 +10,7 @@ gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 #use byceypt
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
