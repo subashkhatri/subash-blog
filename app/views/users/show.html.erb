@@ -1,0 +1,19 @@
+
+
+<h2 align = "center"> Welcome to <%= @user.username %></h2> <br />
+
+<div class = "row">
+    <div class ="well col-sm-8">
+        <div class = "col-md-4 center">
+            <%= gravatar_for(@user) %>
+            <h4 align="center"><%= @user.username %> </h4>
+        </div>       
+        <hr>
+            <div class = "article-actions">
+            Created At: <%= @user.created_at %> <br>
+
+            Updated At: <%= @user.updated_at %>
+            </div> 
+        
+    </div>
+</div>
