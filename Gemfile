@@ -12,6 +12,9 @@ gem 'puma', '~> 4.1'
 #use byceypt
 gem 'bcrypt-ruby', '3.1.5', :require => 'bcrypt'
 
+gem 'kaminari'
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

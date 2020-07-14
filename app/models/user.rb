@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    
+    paginates_per 5
     has_many :articles
     before_save { self.email = email.downcase }
     validates :username, presence: true, 
