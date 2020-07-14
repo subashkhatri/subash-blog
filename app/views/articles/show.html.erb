@@ -3,6 +3,23 @@
 <h2 align = "center"> <%= @article.title %></h2> <br />
 
  <div class ="well col-sm-8">
+    <% if @article.user %>
+        <ul class =" listing ">
+            <div class = " row center">
+                <div class = "well col-md-4">
+                    <li> Created by:</li>
+                    
+                    <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+                    <li class = "article-title">
+                        <%= link_to @article.user.username, user_path(@article.user) %>
+                    </li>
+
+                    <li> <small> <%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></li>
+
+                </div>
+            </div>
+        </ul>   
+    <% end %> 
 
    <h5 align = "center description" > <strong>Description</strong> </h5>
    <hr>
