@@ -9,24 +9,48 @@
       <li class="nav-item" >
       <%= link_to "Articles", articles_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'login', login_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'logout', logout_path, method: :delete, class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Action
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <%= link_to "New Article", new_article_path, class:"dropdown-item" %>
-         
-          <div class="dropdown-divider"></div>
-          
-        </div>
-      </li>
+       <li class="nav-item">        
+          <%= link_to 'Users', users_path, class: "nav-link" %>
+        </li>
+      <% if logged_in? %>
+       <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Articles
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <%= link_to "New Article", new_article_path, class:"dropdown-item" %>         
+            <div class="dropdown-divider"></div>
+            
+          </div>
+        </li>
+        <li class="nav-item">        
+          <%= link_to 'logout', logout_path, method: :delete, class: "nav-link" %>
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Your Profile
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <%= link_to "Edit your profile", edit_user_path(current_user), class:"dropdown-item" %>    
+            <%= link_to "view your profile", user_path(current_user), class:"dropdown-item" %>         
+            <div class="dropdown-divider"></div>
+            
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">        
+          <%= link_to 'login', login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">        
+          <%= link_to 'Sign Up', signup_path, class: "nav-link" %>
+        </li>
+
+      <% end%>
       
     </ul>
     <form class="form-inline my-2 my-lg-0">
